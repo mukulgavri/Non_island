@@ -1,1 +1,1 @@
-docker build -t secrets_image Dockerfile .
+docker build -t secrets_image .
