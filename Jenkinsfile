@@ -15,8 +15,11 @@ pipeline {
                             superuser_password: password
                         ]
                         echo "Workspace Path: ${env.WORKSPACE}"
-                        writeFile file: "${env.WORKSPACE}/secrets.json", text: groovy.json.JsonOutput.toJson(secretJson)
+                        writeFile file: 'secrets.json', text: groovy.json.JsonOutput.toJson(secretJson)
                     }
+
+                    def currentDir = pwd()
+                    echo "Secret file created in: ${currentDir}"
                 }
             }
         }
