@@ -28,7 +28,7 @@ pipeline {
     steps {
         script {
             withCredentials([
-                file(credentialsId: 'secret_file_jenkins',
+                file(credentialsId: 'sceret_file_jenkins',
                     variable: 'secretFile')
             ]) {
                 def secretContent = readFile "${secretFile}"
